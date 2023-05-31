@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Customer</title>
+</head>
+<body>
+<form  th:method="POST" th:action="@{save}" th:object="${newCustomer}">
+    <div>
+        <label for="Name">Name</label>
+        <input type="text" th:field="*{name}" id="Name">
+    </div>
+    <div>
+        <label for="email">Email</label>
+        <input type="text" th:field="*{email}" id="email">
+    </div>
+    <div>
+        <label for="gender" >Gender</label>
+        <select class="form-select" aria-label="Default select example" th:field="*{gender}" id="gender">
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+        </select>
+    </div>
+    <div>
+        <label for="surname">SurName</label>
+        <input type="text" th:field="*{surName}" id="surname">
+    </div>
+    <div>
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" th:field="*{phoneNumber}" id="phoneNumber">
+    </div>
+    <div>
+        <label for="dateOfBirth">Date Of Birth</label>
+        <input type="date" th:field="*{dateOfBirth}" id="dateOfBirth">
+    </div>
+    <button type="submit">Save Customer</button>
+</form>
+</body>
+</html>

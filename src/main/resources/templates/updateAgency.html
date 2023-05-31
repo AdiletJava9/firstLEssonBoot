@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Update Agency Page</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/agencies/updateAgency/{id} (id=${editAgency.getId()})}"
+      th:object="${editAgency}">
+  <div>
+    <input type="hidden" name="id" th:field="*{id}">
+  </div>
+  <div class="mb-3">
+    <label for="Name" class="form-label">User Name</label>
+    <input type="text" class="form-control" id="Name" aria-describedby="emailHelp" th:field="*{name}">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input type="text" class="form-control" id="email" th:field="*{email}">
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Image</label>
+    <input type="text" class="form-control" id="image" th:field="*{image}">
+  </div>
+  <div class="mb-3">
+    <label for="country" class="form-label">Country</label>
+    <input type="text" class="form-control" id="country" th:field="*{country}">
+  </div>
+  <div class="mb-3">
+    <label for="phoneNumber" class="form-label">Phone Number</label>
+    <input type="text" class="form-control" id="phoneNumber" th:field="*{phoneNumber}">
+  </div>
+  <button type="submit" class="btn btn-success">update</button>
+</form>
+</body>
+</html>

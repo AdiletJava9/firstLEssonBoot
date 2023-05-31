@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Customer Page</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/customers/updateCustomer/{id} (id=${editCustomer.getId()})}"
+      th:object="${editCustomer}">
+    <div>
+        <input type="hidden" name="id" th:field="*{id}">
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" aria-describedby="phoneNumberHelp" th:field="*{name}">
+    </div>
+    <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="text" class="form-control" id="email" th:field="*{email}">
+    </div>
+    <div>
+        <label for="gender" >Gender</label>
+        <select class="form-select" aria-label="Default select example" th:field="*{gender}" id="gender">
+            <option value="MALE">MALE</option>
+            <option value="FEMALE">FEMALE</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input type="text" class="form-control" id="phoneNumber" th:field="*{phoneNumber}">
+    </div>
+    <div class="mb-3">
+        <label for="surname" class="form-label">SurName</label>
+        <input type="text" class="form-control" id="surname" th:field="*{surName}">
+    </div>
+    <div class="mb-3">
+        <label for="dateOfBirth" class="form-label">Date Of Birth</label>
+        <input type="date" class="form-control" id="dateOfBirth" th:field="*{dateOfBirth}">
+    </div>
+    <button type="submit" class="btn btn-success">update</button>
+</form>
+</body>
+</html>

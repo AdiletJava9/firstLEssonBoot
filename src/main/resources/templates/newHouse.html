@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Customer</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{save}" th:object="${newHouse}">
+
+    <div>
+        <label for="houseType" >House Type</label>
+        <select class="form-select" aria-label="Default select example" th:field="*{houseType}" id="houseType">
+            <option value="VILLA">VILLA</option>
+            <option value="TOWNHOUSE">TOWNHOUSE</option>
+            <option value="APARTMENT">APARTMENT</option>
+            <option value="BUNGALOW">BUNGALOW</option>
+            <option value="CHALET">CHALET</option>
+        </select>
+    </div>
+    <div>
+        <label for="address">Address</label>
+        <input type="text" th:field="*{address}" id="address">
+    </div>
+    <div>
+        <label for="country">Country</label>
+        <input type="text" th:field="*{country}" id="country">
+    </div>
+    <div>
+        <label for="description">Description</label>
+        <input type="text" th:field="*{description}" id="description">
+    </div>
+    <div>
+        <label for="image">Image</label>
+        <input type="text" th:field="*{image}" id="image">
+    </div>
+    <div>
+        <label for="price">Price</label>
+        <input type="text" th:field="*{price}" id="price">
+    </div>
+    <div>
+        <label for="room">Room</label>
+        <input type="text" th:field="*{room}" id="room">
+    </div>
+    <div>
+        <label for="isBooked" >Booked</label>
+        <select class="form-select" aria-label="Default select example" th:field="*{isBooked}" id="isBooked">
+            <option value="isBooked">isBooked</option>
+            <option value="notBooked">notBooked</option>
+        </select>
+    </div>
+    <div>
+        <label for="agency">Agency Id</label>
+        <input type="text" th:field="*{agency.id}" id="agency">
+    </div>
+    <button type="submit">Save House </button>
+</form>
+</body>
+</html>
